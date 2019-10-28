@@ -74,6 +74,7 @@ type User struct {
 func main() {
 	// 创建日志文件(默认该文件不存在)
 	var file *os.File
+	defer file.Close()
 	if isFileExist("sql.log") {
 		file, err := os.Create("sql.log")
 		if err != nil {
