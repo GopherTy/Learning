@@ -79,3 +79,38 @@ type twoInts struct {
 func (tn *twoInts) String() string {
 	return "(" + strconv.Itoa(tn.a) + "/" + strconv.Itoa(tn.b) + ")"
 }
+
+// Test4 创建一个 employee 实例显示出它的ID
+func Test4() {
+	e := Employee{Person{"t", "yx", Base{1}}, 1.0}
+	id := e.ID()
+	fmt.Println(id)
+}
+
+// Base .
+type Base struct {
+	id int
+}
+
+// SetID .
+func (b *Base) SetID(id int) {
+	b.id = id
+}
+
+// ID .
+func (b Base) ID() int {
+	return b.id
+}
+
+// Person .
+type Person struct {
+	FirstName string
+	LastName  string
+	Base
+}
+
+// Employee .
+type Employee struct {
+	Person
+	salary float64
+}
