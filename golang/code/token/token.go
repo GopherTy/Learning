@@ -170,4 +170,3 @@ func FetchAuth(auth *AccessDetails) (userID uint64, err error) {
 	}
 	return
 }
-// https://www.nexmo.com/blog/2020/03/13/using-jwt-for-authentication-in-a-golang-application-dr
